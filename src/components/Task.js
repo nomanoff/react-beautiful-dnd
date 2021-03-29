@@ -10,18 +10,20 @@ const Container = styled.div`
   background-color: white;
 `;
 
-export default function Task({ tasks, index }) {
-  return (
-    <Draggable draggableId={tasks.id} index={index}>
-      {(provided, innerRef) => (
-        <Container
-          {...provided.draggableProps}
-          {...provided.dragHandleProps}
-          ref={innerRef}
-        >
-          {tasks.content}
-        </Container>
-      )}
-    </Draggable>
-  );
+export default class Task extends React.Component {
+  render() {
+    return (
+      <Draggable draggableId={this.props.task.id} index={this.props.index}>
+        {(provided) => (
+          <Container
+            {...provided.draggableProps}
+            {...provided.dragHandleProps}
+            ref={provided.innerRef}
+          >
+            {this.props.task.content}
+          </Container>
+        )}
+      </Draggable>
+    );
+  }
 }
