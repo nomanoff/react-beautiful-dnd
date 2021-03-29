@@ -26,11 +26,12 @@ export default function Column({ column, tasks }) {
     <Container>
       <Title>{column.title}</Title>
       <Droppable droppableId={column.id}>
-        {(provided, innerRef) => (
-          <TaskList ref={innerRef} {...provided.droppableProps}>
+        {(provided) => (
+          <TaskList ref={provided.innerRef} {...provided.droppableProps}>
             {tasks.map((task, index) => (
               <Task key={task.id} tasks={task} index={index}></Task>
             ))}
+            {provided.placeholder}
           </TaskList>
         )}
       </Droppable>
