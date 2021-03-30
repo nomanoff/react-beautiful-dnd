@@ -42,7 +42,7 @@ export default function Task({ tasks, index }) {
         >
           <Handle {...provided.dragHandleProps} />
           {tasks.window === "chat" ? (
-            <ChatWindow>{tasks.content}</ChatWindow>
+            <ChatWindow index={index}>{tasks.content}</ChatWindow>
           ) : (
             tasks.content
           )}

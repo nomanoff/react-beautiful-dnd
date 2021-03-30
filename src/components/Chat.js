@@ -13,12 +13,23 @@ const style = {
   marginTop: "10px",
 };
 
-export default function ChatWindow({ children }) {
+export default function ChatWindow({ children, index }) {
   const [width, setWidth] = React.useState(300);
+  console.log(index);
   return (
     <Resizable
       style={style}
       size={{ width }}
+      enable={{
+        top: false,
+        right: index === 1 ? false : true,
+        bottom: false,
+        left: index === 1 ? true : false,
+        topRight: false,
+        bottomRight: false,
+        bottomLeft: false,
+        topLeft: false,
+      }}
       minHeight="755px"
       maxHeight="755px"
       minWidth="230"
