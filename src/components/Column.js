@@ -4,8 +4,6 @@ import Task from "./Task";
 import { Droppable } from "react-beautiful-dnd";
 
 const Container = styled.div`
-  width: 800px;
-  height: 400px;
   background-color: #c6e2c6;
   margin: 8px;
   border: 1px solid lightgrey;
@@ -19,13 +17,15 @@ const Title = styled.div`
 
 const TaskList = styled.div`
   padding: 8px;
+  display: flex;
+  flex-direction: row;
 `;
 
 export default function Column({ column, tasks }) {
   return (
     <Container>
       <Title>{column.title}</Title>
-      <Droppable droppableId={column.id}>
+      <Droppable droppableId={column.id} direction={"horizontal"}>
         {(provided) => (
           <TaskList ref={provided.innerRef} {...provided.droppableProps}>
             {tasks.map((task, index) => (

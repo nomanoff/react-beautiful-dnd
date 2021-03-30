@@ -8,6 +8,9 @@ const Container = styled.div`
   padding: 8px;
   margin-bottom: 8px;
   background-color: white;
+  width: 200px;
+  height: 300px;
+  margin: 10px;
 `;
 
 const Handle = styled.div`
