@@ -2,7 +2,7 @@ const initialData = {
   tasks: {
     "task-1": {
       id: "task-1",
-      content: "WINWO ONE",
+      content: "WINDOW ONE",
       window: "chat",
     },
     "task-2": {
