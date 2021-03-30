@@ -8,9 +8,15 @@ const Container = styled.div`
   padding: 8px;
   margin-bottom: 8px;
   background-color: white;
-  width: 200px;
-  height: 300px;
-  margin: 10px;
+  width: ${(props) =>
+    props.window === "chat"
+      ? "310px"
+      : props.window === "matrix"
+      ? "740px"
+      : "300px"};
+  height: 800px;
+  margin: 5px;
+  user-select: none;
 `;
 
 const Handle = styled.div`
@@ -27,7 +33,11 @@ export default function Task({ tasks, index }) {
   return (
     <Draggable draggableId={tasks.id} index={index}>
       {(provided) => (
-        <Container {...provided.draggableProps} ref={provided.innerRef}>
+        <Container
+          {...provided.draggableProps}
+          ref={provided.innerRef}
+          window={tasks.window}
+        >
           <Handle {...provided.dragHandleProps} />
           {tasks.content}
         </Container>
