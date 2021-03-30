@@ -19,6 +19,7 @@ const TaskList = styled.div`
   padding: 8px;
   display: flex;
   flex-direction: row;
+  font-weight: 800px;
 `;
 
 export default function Column({ column, tasks }) {

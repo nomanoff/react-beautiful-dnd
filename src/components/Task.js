@@ -1,21 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import { Draggable } from "react-beautiful-dnd";
+import Chat from "./Chat";
+import ChatWindow from "./Chat";
 
 const Container = styled.div`
-  border: 1px solid lightgrey;
-  border-radius: 2px;
+  border: 0px solid lightgrey;
+  border-radius: 0px;
   padding: 8px;
   margin-bottom: 8px;
   background-color: white;
   width: ${(props) =>
     props.window === "chat"
-      ? "310px"
+      ? null
       : props.window === "matrix"
-      ? "740px"
-      : "300px"};
+      ? "800px"
+      : null};
   height: 800px;
-  margin: 5px;
+  margin: 0px;
   user-select: none;
 `;
 
@@ -39,7 +41,11 @@ export default function Task({ tasks, index }) {
           window={tasks.window}
         >
           <Handle {...provided.dragHandleProps} />
-          {tasks.content}
+          {tasks.window === "chat" ? (
+            <ChatWindow>{tasks.content}</ChatWindow>
+          ) : (
+            tasks.content
+          )}
         </Container>
       )}
     </Draggable>

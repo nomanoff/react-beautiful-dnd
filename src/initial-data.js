@@ -1,13 +1,18 @@
+import React from "react";
+function Message() {
+  return <h3>BOX ONE</h3>;
+}
+
 const initialData = {
   tasks: {
     "task-1": {
       id: "task-1",
-      content: "WINDOW ONE",
+      content: <Message />,
       window: "chat",
     },
     "task-2": {
       id: "task-2",
-      content: "WINDOW TWO",
+      content: "BOX TWO",
       window: "matrix",
     },
   },

@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "re-resizable": "^6.9.0",
     "react": "16.8.6",
     "react-beautiful-dnd": "^13.1.0",
     "react-dom": "16.8.6",
