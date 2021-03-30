@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Draggable } from "react-beautiful-dnd";
-import Chat from "./Chat";
 import ChatWindow from "./Chat";
 
 const Container = styled.div`

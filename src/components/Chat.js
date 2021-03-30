@@ -15,7 +15,6 @@ const style = {
 
 export default function ChatWindow({ children, index }) {
   const [width, setWidth] = React.useState(300);
-  console.log(index);
   return (
     <Resizable
       style={style}
